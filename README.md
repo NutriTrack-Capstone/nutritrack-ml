@@ -16,8 +16,7 @@ Each Jupyter notebook in notebook-archive is done individually by any team membe
 </tr>
 <tr>
 <th>Data</th>
-<td><code>
-{<br/>
+<td><code>{<br/>
 &nbsp;&nbsp;"signature_name": "predict_image_class",<br/>
 &nbsp;&nbsp;"instances": image_array,<br/>
 }

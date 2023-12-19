@@ -17,9 +17,10 @@ This repository is to be dockerized and hosted with TensorFlow Serving. This rep
 <th>Data</th>
 <td><code>{<br/>
 &nbsp;&nbsp;"signature_name": "predict_image_class",<br/>
-&nbsp;&nbsp;"instances": image_array,<br/>
+&nbsp;&nbsp;"instances": [image],<br/>
 }
-</code></td>
+</code>
+where <code>image</code> is the raw image captured with the shape of <code>(x, y, channel)</code>.</td>
 </table>
 
 ### Response

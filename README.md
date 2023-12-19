@@ -3,6 +3,7 @@
 This repository is to be dockerized and hosted with TensorFlow Serving. This repository also acts as checkpoint for the machine learning trainings as part of Nutritrack capstone project.
 
 ## API
+### Request
 <table>
 <tr>
 <th>Endpoint</th>
@@ -16,10 +17,25 @@ This repository is to be dockerized and hosted with TensorFlow Serving. This rep
 <th>Data</th>
 <td><code>{<br/>
 &nbsp;&nbsp;"signature_name": "predict_image_class",<br/>
-&nbsp;&nbsp;"instances": image_array,<br/>
+&nbsp;&nbsp;"instances": [image],<br/>
 }
-</code></td>
+</code>
+where <code>image</code> is the raw image captured with the shape of <code>(x, y, channel)</code>.</td>
 </table>
+
+### Response
+```
+{
+  "predictions":
+  [
+    {
+      "score": [foodProbability],
+      "label": [foodName],
+    }
+  ],
+}
+```
+where `foodProbability` is a value 0~1 associated with the `foodName` string.
 
 ## Files and Directories
 <table>

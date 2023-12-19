@@ -7,7 +7,9 @@ This repository is to be dockerized and hosted with TensorFlow Serving. This rep
 <table>
 <tr>
 <th>Endpoint</th>
-<td><code>POST http://localhost:8501/v1/models/nutritrack:predict</code></td>
+<td><code>POST ${baseUrl}/v1/models/nutritrack:predict</code><br/>
+where <code>baseUrl</code> currently is https://nutritrack-tf-serving-ggq4e34rzq-et.a.run.app.
+</td>
 </tr>
 <tr>
 <th>Header</th>

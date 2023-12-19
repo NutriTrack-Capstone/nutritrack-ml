@@ -2,8 +2,6 @@
 
 This repository is to be dockerized and hosted with TensorFlow Serving. This repository also acts as checkpoint for the machine learning trainings as part of Nutritrack capstone project.
 
-Each Jupyter notebook in notebook-archive is done individually by any team member, with same or different datasets. The objective of this workflow is to obtain best accuracy along with as many classes as possible, while team members can use existing code to improve the models to be built.
-
 ## API
 <table>
 <tr>
@@ -23,8 +21,28 @@ Each Jupyter notebook in notebook-archive is done individually by any team membe
 </code></td>
 </table>
 
-## Progress
-- Used local Google Drive as data source (model-1-1, model-2-1)
-- Used HuggingFace Datasets API as data source (model-3-1)
-- Achieved 90.0% accuracy on 9 classes with transfer learning (model-1-1)
-- Constructed confusion matrix (model-1-1)
+## Files and Directories
+<table>
+<tr>
+<th><code>model-saver.ipynb</code></th>
+<td>Jupyter Notebook to save the model in SavedModel format from H5 format.</td>
+</tr>
+<tr>
+<th><code>models/</code></th>
+<td>Versions of SavedModel.</td>
+</tr>
+<tr>
+<th><code>h5-models/</code></th>
+<td>Original H5 models.</td>
+</tr>
+<tr>
+<th><code>notebook-archive/</code></th>
+<td>Archive of Jupyter Notebooks used to train models.</td>
+</tr>
+</table>
+
+## Docker Run
+```bash
+docker run -p 8501:8501 --mount type=bind,source="$(pwd)/models",target="/models/nutritrack" \
+-e MODEL_NAME=nutritrack -t tensorflow/serving
+```

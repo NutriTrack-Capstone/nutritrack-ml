@@ -58,9 +58,3 @@ where `foodProbability` is a value 0~1 associated with the `foodName` string.
 <td>Archive of Jupyter Notebooks used to train models.</td>
 </tr>
 </table>
-
-## Docker Run
-```bash
-docker run -p 8501:8501 --mount type=bind,source="$(pwd)/models",target="/models/nutritrack" \
--e MODEL_NAME=nutritrack -t tensorflow/serving
-```

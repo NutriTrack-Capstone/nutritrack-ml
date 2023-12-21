@@ -58,3 +58,15 @@ where `foodProbability` is a value 0~1 associated with the `foodName` string.
 <td>Archive of Jupyter Notebooks used to train models.</td>
 </tr>
 </table>
+
+## Docker
+This repository can be built into image before running
+```bash
+docker build -t <tag> .
+docker run <tag>
+```
+
+or be immediately run.
+```bash
+docker run .
+```
